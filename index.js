@@ -1,4 +1,5 @@
-const posts = [
+document.addEventListener("DOMContentLoaded",()=>{
+    const posts = [
     {
         name: "Vincent van Gogh",
         username: "vincey1853",
@@ -28,22 +29,23 @@ const posts = [
     }
 ]
 
-let nameEl = document.getElementById("id-name")
-let unameEl=document.getElementById("username")
-let captionEl=document.getElementById("caption")
-let locationEl=document.getElementById("location")
-let avartarEl=document.getElementById("user-avatar")
-let postEl=document.getElementById("feed-post")
-let likesEl=document.getElementById("likes-count")
-let feedEl=document.getElementById("feed")
-
+let nameEl = document.querySelector(".id-name")
+let unameEl=document.querySelector(".username")
+let captionEl=document.querySelector(".caption")
+let locationEl=document.querySelector(".location")
+let avartarEl=document.querySelector(".user-avatar")
+let postEl=document.querySelector(".feed-post")
+let likesEl=document.querySelector(".likes-count")
+let feedEl=document.querySelector(".feed")
+let buttons=document.querySelectorAll(".button")
+let iconContainer=document.querySelector(".interactive-icons")
 
 window.addEventListener('load', function display(){
     nameEl.textContent += `${posts[0].name}`
     unameEl.textContent += `${posts[0].username}`
     captionEl.textContent += `${posts[0].comment}`
-    avartarEl.innerHTML = `<img id="user-avatar" src="${posts[0].avatar}">`
-    postEl.innerHTML = `<img id="feed-post" src="${posts[0].post}">`
+    avartarEl.innerHTML = `<img class="user-avatar" src="${posts[0].avatar}">`
+    postEl.innerHTML = `<img class="feed-post" src="${posts[0].post}">`
     locationEl.textContent += `${posts[0].location}`
     likesEl.textContent += `${posts[0].likes} likes`
 
@@ -54,28 +56,52 @@ window.addEventListener('load', function display(){
 
 function postfeed(arrnum){
 
-feedEl.innerHTML += `<div id="separator"><div>
+feedEl.innerHTML += `<div class="separator"><div>
             <article class="olda-post">
             <header class="user-info">
-                <div id="user-avatar"><img id="user-avatar" src="${posts[arrnum].avatar}"></div>
+                <div class="user- hey Google {
+                    
+                }else {
+                    
+                }vatar"><img class="user-avatar" src="${posts[arrnum].avatar}"></div>
                 <div class="name-location">
-                 <h2 id="id-name">${posts[arrnum].name}</h2>
-                 <p id="location">${posts[arrnum].location}</p>
+                 <h2 class="id-name">${posts[arrnum].name}</h2>
+                 <p class="location">${posts[arrnum].location}</p>
                 </div>
             </header>
-            <figure id="feed-post"><img id="feed-post" src="${posts[arrnum].post}">
+            <figure class="feed-post"><img class="feed-post" src="${posts[arrnum].post}">
             </figure>
             <div class="interactive-icons">
-            <button class="btn"><img id="like-btn" src="images/icon-heart.png"></button>
-            <button class="btn"><img id="cmt-btn" src="images/icon-comment.png"></button>
-            <button class="btn"><img id="share-btn" src="images/icon-dm.png"></button>
+            <button class="btn"><i class="fa-solid fa-heart fa-2x"></i></button>
+            <button class="btn"><i class="fa-solid fa-comment fa-2x"></i></button>
+            <button class="btn"><i class="fa-solid fa-paper-plane fa-2x"></i></button>
             </div>
             <footer>
-            <p id="likes-count">${posts[arrnum].likes} likes</p>
-            <p id="username-caption"><span id="username">${posts[arrnum].username}</span><span id="caption">${posts[arrnum].comment}</span></span></p>
+            <p class="likes-count">${posts[arrnum].likes} likes</p>
+            <p class="username-caption"><span class="username">${posts[arrnum].username}</span><span class="caption">${posts[arrnum].comment}</span></span></p>
             </footer>
         </article>`
 
         return
 
 }
+//event delegation
+iconContainer.addEventListener("click",(e)=>{
+    let button=e.target.closest(".btn")
+    if(!button) return;
+    const article=button.closest(".olda-post")
+    
+    
+    //Validate if the heart was clicked
+    const icon=button.querySelector("i")
+    if(!icon.classList.contains("fa-heart")) return;
+    
+    const likesEl =article.querySelector(".likes-count")
+    let currentLikes=parseInt(likesEl.textContent)
+        likesEl.textContent = `${currentLikes+1} likes`
+    
+})
+
+
+    
+})

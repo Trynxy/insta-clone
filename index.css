@@ -2,7 +2,7 @@ html, body {
     margin: auto;
     padding: 0;
     width: 375px;
-    background: #C6C6C6;
+    background: .C6C6C6;
     font-family: "Source Sans 3", sans-serif;
 }
 
@@ -17,7 +17,7 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 0px 15px 5px 8px;
-    border-bottom: 1px solid #C6C6C6;
+    border-bottom: 1px solid .C6C6C6;
     background-color: white;
 }
 
@@ -44,7 +44,7 @@ nav{
     margin: 0 0 10px 11px;
 }
 
-#user-avatar{
+.user-avatar{
     width: 34px;
     height: 34px;
     margin-top: 5px;
@@ -55,19 +55,19 @@ nav{
     margin: 9px 0 0 6px;
 }
 
-#id-name{
+.id-name{
 font-size: 14px;
 font-weight: bold;
 margin: 0;
 }
 
-#location{
+.location{
     font-size: 12px;
     margin: 0;
 }
 
 /* Content */
-#feed-post{
+.feed-post{
     max-width: 100%;
     margin: 0;
 }
@@ -82,33 +82,36 @@ margin: 0;
 .btn
 {
 width: 40px;
-background: transparent;
+background-color:white;
 border: none;
 cursor: pointer;
+
+
+}
+.btn i{
+    border-color:black;
+    border-width:2px;
+    border-style:none;
 }
 
-#like-btn, #cmt-btn, #share-btn{
-    max-width: 100%;
-}
-
-#like-btn:hover, #cmt-btn:hover, #share-btn:hover{
-    background-color: red;
+.btn:hover{
+    color: red;
 }
 
 /* Count Caption */
 
-#likes-count{
+.likes-count{
     margin: 10px 0 0 10px;
     font-weight: bold;
 }
 
-#username-caption{
+.username-caption{
     display: inline-block;
     margin: 10px 0 10px 10px;
     text-align: left;
 }
 
-#username{
+.username{
     font-weight: bold;
     padding-right: 5px;
 }
@@ -117,6 +120,6 @@ cursor: pointer;
 
 /* Separator */
 
-#separator{
-    border-bottom: 18px solid #C6C6C6;
+.separator{
+    border-bottom: 18px solid .C6C6C6;
 }
