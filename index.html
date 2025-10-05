@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
         <title>Oldagram - Scrimba Project</title>
     </head>
     <body>
@@ -12,29 +14,38 @@
          <img class="profile-pic" src="/images/user-avatar.png">
         </nav>
         <main>
+           
+            
         <article class="olda-post">
+            
             <header class="user-info">
-                <div id="user-avatar"></div>
+                <div class="user-avatar"></div>
                 <div class="name-location">
-                 <h2 id="id-name"></h2>
-                 <p id="location"></p>
+                 <h2 class="id-name"></h2>
+                 <p class="location"></p>
                 </div>
             </header>
-            <figure id="feed-post">
+            
+            <figure class="feed-post">
             </figure>
             <div class="interactive-icons">
-            <button class="btn"><img id="like-btn" src="images/icon-heart.png"></button>
-            <button class="btn"><img id="cmt-btn" src="images/icon-comment.png"></button>
-            <button class="btn"><img id="share-btn" src="images/icon-dm.png"></button>
+            <button class="btn"><i class="fa-solid fa-heart fa-2x"></i></button>
+            <button class="btn"><i class="fa-solid fa-comment fa-2x"></i></button>
+            <button class="btn"><i class="fa-solid fa-paper-plane fa-2x"></i></button>
             </div>
+            
             <footer>
-            <p id="likes-count"></p>
-            <p id="username-caption"><span id="username"></span><span id="caption"></span></p>
+            <p class="likes-count"></p>
+            <p class="username-caption"><span class="username"></span><span class="caption"></span></p>
             </footer>
+            
         </article>
-        <div id="separator"></div> 
-        <div id="feed"></div> 
+        
+        
+        <div class="separator"></div> 
+        <div class="feed"></div> 
         </main>
-        <script src="index.js"></script>
+     
     </body>
+       <script src="index.js"></script>
 </html>
